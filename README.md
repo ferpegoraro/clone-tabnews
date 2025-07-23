@@ -5,6 +5,7 @@ Este projeto documenta o processo de configuração de um ambiente de desenvolvi
 ## Histórico de Comandos Executados
 
 ### 1. Diagnóstico do NVM
+
 ```bash
 # Tentativa inicial de verificar versão do NVM (falhou)
 nvm --version
@@ -20,6 +21,7 @@ node --version
 ```
 
 ### 2. Instalação do NVM
+
 ```bash
 # Instalação do NVM via script oficial
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
@@ -30,6 +32,7 @@ export NVM_DIR="$HOME/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
 ```
 
 ### 3. Configuração do NVM
+
 ```bash
 # Visualização da ajuda do NVM
 nvm --help
@@ -44,6 +47,7 @@ nvm install
 ```
 
 ### 4. Criação do package.json
+
 ```bash
 # Criação do arquivo package.json (comando inferido baseado no conteúdo)
 npm init
@@ -53,6 +57,7 @@ npm init -y
 ```
 
 ### 5. Instalação de Dependências React
+
 ```bash
 # Instalação do React versão específica
 npm i react@18.2.0
@@ -66,15 +71,19 @@ npm i react-dom@18.2.0
 ## Arquivos de Configuração Criados
 
 ### .nvmrc
+
 ```
 lts/hydrogen
 ```
+
 Arquivo que especifica a versão do Node.js a ser usada pelo NVM neste projeto.
 
 ### .gitignore
+
 ```
 node_modules
 ```
+
 Arquivo que especifica quais arquivos/pastas o Git deve ignorar.
 
 ## Problemas Encontrados e Soluções
