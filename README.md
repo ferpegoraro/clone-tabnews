@@ -120,3 +120,27 @@ npm audit
 # Corrigir vulnerabilidades
 npm audit fix
 ```
+
+## Testes de API com curl
+
+### Endpoint de Status
+
+Foi criado um endpoint de status em `/api/status` que retorna um JSON simples. Os testes abaixo demonstram como acessar este endpoint usando curl:
+
+```bash
+# Requisição simples ao endpoint de status
+curl http://localhost:3000/api/status
+# Resultado: {"chave":"São acima da média"}
+
+# Requisição com informações detalhadas (verbose)
+curl http://localhost:3000/api/status -v
+# Resultado: Mostra headers de requisição e resposta, além do corpo da resposta
+```
+
+O endpoint de status está configurado para retornar:
+
+- Status HTTP: 200 OK
+- Content-Type: application/json
+- Corpo da resposta: `{"chave":"São acima da média"}`
+
+Este endpoint serve como uma verificação básica para confirmar que a API está funcionando corretamente.
