@@ -182,6 +182,7 @@ services:
 ```
 
 Este arquivo configura:
+
 - Um serviço chamado `database` usando a imagem oficial do PostgreSQL versão 16 com Alpine Linux
 
 ### Próximos passos para configuração do Docker
@@ -190,3 +191,29 @@ Este arquivo configura:
 - [ ] Configurar volumes para persistência de dados
 - [ ] Definir portas para acesso ao banco de dados
 - [ ] Integrar o serviço de banco de dados com a aplicação
+
+### Comandos Docker úteis
+
+#### Gerenciamento de containers
+
+| Comando                               | Descrição                                                                         |
+| ------------------------------------- | --------------------------------------------------------------------------------- |
+| `docker compose up`                   | Rodar a imagem em um container                                                    |
+| `docker compose up -d`                | Rodar a imagem em um container em segundo plano (detached)                        |
+| `docker compose down`                 | Destruir o container                                                              |
+| `docker compose up --force-recreate`  | Reconstruir o container (equivalente a um `compose down` seguido de `compose up`) |
+| `docker compose -f [path/arquivo] up` | Subir a imagem a partir de um arquivo compose.yaml no caminho especificado        |
+
+#### Monitoramento de containers
+
+| Comando                           | Descrição                                        |
+| --------------------------------- | ------------------------------------------------ |
+| `docker ps`                       | Listar todos os containers em execução           |
+| `docker ps -a`                    | Listar todos os containers, incluindo os parados |
+| `docker logs [nome do container]` | Retornar os logs do container especificado       |
+
+#### Conexão com PostgreSQL
+
+| Comando                                                 | Descrição                                                      |
+| ------------------------------------------------------- | -------------------------------------------------------------- |
+| `psql --host=localhost --username=postgres --port=5432` | Conectar ao cliente psql do PostgreSQL (senha: local_password) |
