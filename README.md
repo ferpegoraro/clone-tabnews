@@ -144,3 +144,49 @@ O endpoint de status está configurado para retornar:
 - Corpo da resposta: `{"chave":"São acima da média"}`
 
 Este endpoint serve como uma verificação básica para confirmar que a API está funcionando corretamente.
+
+## Configuração do Docker
+
+### Docker Compose
+
+O projeto utiliza Docker para gerenciar a infraestrutura de desenvolvimento, especialmente o banco de dados PostgreSQL. Abaixo estão os comandos Docker utilizados:
+
+```bash
+# Verificar a versão do Docker instalada
+docker --version
+# Resultado: Docker version 28.3.2, build 578ccf6
+
+# Iniciar os serviços definidos no arquivo compose.yaml (modo interativo)
+docker compose up
+# Resultado: Inicia o container do PostgreSQL 16 Alpine e mostra logs no terminal
+
+# Iniciar os serviços em segundo plano (modo detached)
+docker compose up -d
+# Resultado: Inicia o container sem bloquear o terminal
+
+# Listar containers em execução
+docker ps
+# Resultado: Mostra informações sobre os containers ativos
+```
+
+### Arquivo compose.yaml
+
+O arquivo `compose.yaml` define os serviços necessários para o ambiente de desenvolvimento:
+
+```yaml
+services:
+  database:
+    image: "postgres:16-alpine"
+    environment:
+      POSTGRES_PASSWORD: "local_password"
+```
+
+Este arquivo configura:
+- Um serviço chamado `database` usando a imagem oficial do PostgreSQL versão 16 com Alpine Linux
+
+### Próximos passos para configuração do Docker
+
+- [ ] Adicionar variáveis de ambiente para o PostgreSQL (usuário, senha, nome do banco)
+- [ ] Configurar volumes para persistência de dados
+- [ ] Definir portas para acesso ao banco de dados
+- [ ] Integrar o serviço de banco de dados com a aplicação
